@@ -23,7 +23,7 @@ struct NavigationBarView: View {
                 .italic()
                 .fontWeight(.heavy)
                 .foregroundColor(.black)
-            
+            //Title
             
             Spacer()
             
