@@ -16,6 +16,7 @@ struct ContentView: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.red, .white]), startPoint: .bottomLeading, endPoint: .topTrailing)
                     .ignoresSafeArea()
+                // Background Colour
                 VStack (spacing: 0) {
                     NavigationBarView()
                         .padding(.horizontal, 15)
@@ -26,6 +27,7 @@ struct ContentView: View {
                     Spacer()
                 }
                 .ignoresSafeArea()
+                // Navigation Bar
             }
         }
     }
