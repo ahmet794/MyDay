@@ -14,41 +14,20 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color
-                    .white
-                    .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing){
-                Menu{
-                    Button("Add Task") {
-                        withAnimation {
-                            buttonFunc.present()
-                    }
-            }
-                                    
-                } label: {
-                    Label(
-                        title: { Text("Add")},
-                        icon: { Image(systemName: "plus")}
-                        )
-                    }
+                LinearGradient(gradient: Gradient(colors: [.red, .white]), startPoint: .bottomLeading, endPoint: .topTrailing)
+                    .ignoresSafeArea()
+                VStack (spacing: 0) {
+                    NavigationBarView()
+                        .padding(.horizontal, 15)
+                        .padding(.bottom)
+                        .padding(.top, 45)
+                        .shadow(color: Color.black.opacity(0.05), radius: 5, x: 0, y: 5)
+                    
+                    Spacer()
                 }
+                .ignoresSafeArea()
             }
-            .padding(0.0)
-            .navigationTitle("MyDay")
-            }
-            .overlay(alignment: .center) {
-                if buttonFunc.action.isPresented{
-                    AddTaskView {
-                        buttonFunc.dismiss()
-                    }
-                }
-            }
-            
         }
-        .overlay(
-            RoundedRectangle(cornerRadius: 16)
-                .strokeBorder(.red, lineWidth: 10)
-        )
     }
 }
 
